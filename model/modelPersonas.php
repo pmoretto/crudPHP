@@ -10,8 +10,8 @@
         }
 
         public function getPersonas(){
-            require("paginacion.php");
-            $query = $this->db->query("SELECT * FROM datos_usuarios LIMIT $empieza_desde,$totalPaginas");
+            require_once("paginacion.php");
+            $query = $this->db->query("SELECT * FROM datos_usuarios LIMIT $empieza_desde,$tamagno_pagina");
             while ($filas = $query->fetch(PDO::FETCH_ASSOC)){
                 $this->personas[] = $filas;
             }
